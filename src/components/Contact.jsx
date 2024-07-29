@@ -111,13 +111,13 @@ const Contact = () => {
       
       <div className='flex flex-row justify-evenly mt-10'>
       <button href="https://github.com/Eyoab11" target="_blank" rel="noopener noreferrer">
-    <img src="/src/assets/github.svg" alt="GitHub" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
+    <img src="/public/github.svg" alt="GitHub" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
   </button>
   <button href="mailto:eyoabamare3@gmail.com" target="_blank" rel="noopener noreferrer">
-    <img src="/src/assets/gmail.svg" alt="Gmail" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
+    <img src="/public/gmail.svg" alt="Gmail" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
   </button>
   <button href="https://www.linkedin.com/in/eyoabamare" target="_blank" rel="noopener noreferrer">
-    <img src="/src/assets/linkedin.svg" alt="LinkedIn" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
+    <img src="/public/linkedin.svg" alt="LinkedIn" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
   </button>
         </div>
 
