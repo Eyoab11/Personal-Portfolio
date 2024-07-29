@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 
-
-
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -38,6 +36,14 @@ const Contact = () => {
     } catch (error) {
       setError('Failed to send message. Please try again later.');
     }
+  };
+
+  const handleNavigate = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleEmail = (email) => {
+    window.location.href = `mailto:${email}`;
   };
 
   return (
@@ -103,24 +109,47 @@ const Contact = () => {
               Send Message
             </button>
           </form>
-
-
-
         )}
       </div>
       
       <div className='flex flex-row justify-evenly mt-10'>
-      <button href="https://github.com/Eyoab11" target="_blank" rel="noopener noreferrer">
-    <img src="/public/github.svg" alt="GitHub" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
-  </button>
-  <button href="mailto:eyoabamare3@gmail.com" target="_blank" rel="noopener noreferrer">
-    <img src="/public/gmail.svg" alt="Gmail" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
-  </button>
-  <button href="https://www.linkedin.com/in/eyoabamare" target="_blank" rel="noopener noreferrer">
-    <img src="/public/linkedin.svg" alt="LinkedIn" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
-  </button>
-        </div>
-
+        <button 
+          onClick={() => handleNavigate('https://github.com/Eyoab11')} 
+          className='p-2 bg-transparent border-0'
+        >
+          <img 
+            src="/public/github.svg" 
+            alt="GitHub" 
+            width={30} 
+            height={30} 
+            className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg'
+          />
+        </button>
+        <button 
+          onClick={() => handleEmail('eyoabamare3@gmail.com')} 
+          className='p-2 bg-transparent border-0'
+        >
+          <img 
+            src="/public/gmail.svg" 
+            alt="Gmail" 
+            width={30} 
+            height={30} 
+            className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg'
+          />
+        </button>
+        <button 
+          onClick={() => handleNavigate('https://www.linkedin.com/in/eyoabamare')} 
+          className='p-2 bg-transparent border-0'
+        >
+          <img 
+            src="/public/linkedin.svg" 
+            alt="LinkedIn" 
+            width={30} 
+            height={30} 
+            className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg'
+          />
+        </button>
+      </div>
     </div>
   );
 };
