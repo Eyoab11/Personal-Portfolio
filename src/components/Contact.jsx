@@ -123,42 +123,42 @@ const Contact = () => {
       </div>
       
       <div className='flex flex-row justify-evenly mt-10'>
-            <div 
+            <button 
                 onClick={handleGitHubClick} 
-                className='cursor-pointer'
+                className='p-2 rounded-full bg-gray-100 hover:bg-gray-200 shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg'
+                aria-label="GitHub"
             >
                 <img 
                     src="/src/assets/github.svg" 
                     alt="GitHub" 
                     width={30} 
                     height={30} 
-                    className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' 
                 />
-            </div>
-            <div 
+            </button>
+            <button 
                 onClick={handleEmailClick} 
-                className='cursor-pointer'
+                className='p-2 rounded-full bg-gray-100 hover:bg-gray-200 shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg'
+                aria-label="Email"
             >
                 <img 
                     src="/src/assets/gmail.svg" 
                     alt="Gmail" 
                     width={30} 
                     height={30} 
-                    className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' 
                 />
-            </div>
-            <div 
+            </button>
+            <button 
                 onClick={handleLinkedInClick} 
-                className='cursor-pointer'
+                className='p-2 rounded-full bg-gray-100 hover:bg-gray-200 shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg'
+                aria-label="LinkedIn"
             >
                 <img 
                     src="/src/assets/linkedin.svg" 
                     alt="LinkedIn" 
                     width={30} 
                     height={30} 
-                    className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' 
                 />
-            </div>
+            </button>
         </div>
 
     </div>
