@@ -3,6 +3,19 @@ import emailjs from 'emailjs-com';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { GoMail } from 'react-icons/go';
 
+
+const handleGitHubClick = () => {
+  window.open('https://github.com/Eyoab11', '_blank', 'noopener,noreferrer');
+};
+
+const handleEmailClick = () => {
+  window.location.href = 'mailto:eyoabamare3@gmail.com';
+};
+
+const handleLinkedInClick = () => {
+  window.open('https://www.linkedin.com/in/eyoabamare', '_blank', 'noopener,noreferrer');
+};
+
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -110,16 +123,43 @@ const Contact = () => {
       </div>
       
       <div className='flex flex-row justify-evenly mt-10'>
-  <a href="https://github.com/Eyoab11" target="_blank" rel="noopener noreferrer">
-    <img src="/src/assets/github.svg" alt="GitHub" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
-  </a>
-  <a href="mailto:eyoabamare3@gmail.com" target="_blank" rel="noopener noreferrer">
-    <img src="/src/assets/gmail.svg" alt="Gmail" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
-  </a>
-  <a href="https://www.linkedin.com/in/eyoabamare" target="_blank" rel="noopener noreferrer">
-    <img src="/src/assets/linkedin.svg" alt="LinkedIn" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
-  </a>
-</div>
+            <div 
+                onClick={handleGitHubClick} 
+                className='cursor-pointer'
+            >
+                <img 
+                    src="/src/assets/github.svg" 
+                    alt="GitHub" 
+                    width={30} 
+                    height={30} 
+                    className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' 
+                />
+            </div>
+            <div 
+                onClick={handleEmailClick} 
+                className='cursor-pointer'
+            >
+                <img 
+                    src="/src/assets/gmail.svg" 
+                    alt="Gmail" 
+                    width={30} 
+                    height={30} 
+                    className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' 
+                />
+            </div>
+            <div 
+                onClick={handleLinkedInClick} 
+                className='cursor-pointer'
+            >
+                <img 
+                    src="/src/assets/linkedin.svg" 
+                    alt="LinkedIn" 
+                    width={30} 
+                    height={30} 
+                    className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' 
+                />
+            </div>
+        </div>
 
     </div>
   );
