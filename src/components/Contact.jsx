@@ -1,20 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { GoMail } from 'react-icons/go';
 
 
-const handleGitHubClick = () => {
-  window.open('https://github.com/Eyoab11', '_blank', 'noopener,noreferrer');
-};
-
-const handleEmailClick = () => {
-  window.location.href = 'mailto:eyoabamare3@gmail.com';
-};
-
-const handleLinkedInClick = () => {
-  window.open('https://www.linkedin.com/in/eyoabamare', '_blank', 'noopener,noreferrer');
-};
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -123,42 +110,15 @@ const Contact = () => {
       </div>
       
       <div className='flex flex-row justify-evenly mt-10'>
-            <button 
-                onClick={handleGitHubClick} 
-                className='p-2 rounded-full bg-gray-100 hover:bg-gray-200 shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg'
-                aria-label="GitHub"
-            >
-                <img 
-                    src="/src/assets/github.svg" 
-                    alt="GitHub" 
-                    width={30} 
-                    height={30} 
-                />
-            </button>
-            <button 
-                onClick={handleEmailClick} 
-                className='p-2 rounded-full bg-gray-100 hover:bg-gray-200 shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg'
-                aria-label="Email"
-            >
-                <img 
-                    src="/src/assets/gmail.svg" 
-                    alt="Gmail" 
-                    width={30} 
-                    height={30} 
-                />
-            </button>
-            <button 
-                onClick={handleLinkedInClick} 
-                className='p-2 rounded-full bg-gray-100 hover:bg-gray-200 shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg'
-                aria-label="LinkedIn"
-            >
-                <img 
-                    src="/src/assets/linkedin.svg" 
-                    alt="LinkedIn" 
-                    width={30} 
-                    height={30} 
-                />
-            </button>
+      <button href="https://github.com/Eyoab11" target="_blank" rel="noopener noreferrer">
+    <img src="/src/assets/github.svg" alt="GitHub" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
+  </button>
+  <button href="mailto:eyoabamare3@gmail.com" target="_blank" rel="noopener noreferrer">
+    <img src="/src/assets/gmail.svg" alt="Gmail" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
+  </button>
+  <button href="https://www.linkedin.com/in/eyoabamare" target="_blank" rel="noopener noreferrer">
+    <img src="/src/assets/linkedin.svg" alt="LinkedIn" width={30} height={30} className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg relative' />
+  </button>
         </div>
 
     </div>
