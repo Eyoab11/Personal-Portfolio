@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -117,11 +120,9 @@ const Contact = () => {
           onClick={() => handleNavigate('https://github.com/Eyoab11')} 
           className='p-2 bg-transparent border-0'
         >
-          <img 
-            src="/public/github.svg" 
-            alt="GitHub" 
-            width={30} 
-            height={30} 
+          <FontAwesomeIcon 
+            icon={faGithub} 
+            size="2x" 
             className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg'
           />
         </button>
@@ -129,11 +130,9 @@ const Contact = () => {
           onClick={() => handleEmail('eyoabamare3@gmail.com')} 
           className='p-2 bg-transparent border-0'
         >
-          <img 
-            src="/public/gmail.svg" 
-            alt="Gmail" 
-            width={30} 
-            height={30} 
+          <FontAwesomeIcon 
+            icon={faEnvelope} 
+            size="2x" 
             className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg'
           />
         </button>
@@ -141,11 +140,9 @@ const Contact = () => {
           onClick={() => handleNavigate('https://www.linkedin.com/in/eyoabamare')} 
           className='p-2 bg-transparent border-0'
         >
-          <img 
-            src="/public/linkedin.svg" 
-            alt="LinkedIn" 
-            width={30} 
-            height={30} 
+          <FontAwesomeIcon 
+            icon={faLinkedin} 
+            size="2x" 
             className='shadow-md transition-transform duration-300 transform hover:scale-150 hover:shadow-lg'
           />
         </button>
