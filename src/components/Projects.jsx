@@ -11,6 +11,11 @@ import discoverethiopiaimg from '../assets/discoverEthiopia.png';
 import memariyaimg from '../assets/memariya.com.png';
 import bootstrapimg from '../assets/bootstrap.png';
 import backendd from '../assets/backend.png'
+import dh from '../assets/dh.png'
+import taitu from '../assets/taitu.png'
+import machine from '../assets/machine.jpg'
+
+
 const projectData = {
   mestawet: {
     title: 'Social Media Website : Mestawet',
@@ -29,12 +34,36 @@ const projectData = {
     image: portfolio,
     workType: 'Individual',
   },
+  machineLearning: {
+    title: 'Machine Learning Projects',
+    tech: 'python',
+    status: 'Completed',
+    githubLink: 'https://github.com/Eyoab11/Machine-Learning',
+    image: machine,
+    workType: 'Individual',
+  },
   anbessaFit: {
     title: 'Backend for Fitness Website',
     tech: 'NestJS, mySQL',
     status: 'Completed',
     githubLink: 'https://github.com/Eyoab11/',
     image: backendd,
+    workType: 'Individual',
+  },
+  DHJava: {
+    title: 'DH Java Implementation',
+    tech: 'java',
+    status: 'Completed',
+    githubLink: 'https://github.com/Eyoab11/dh-java',
+    image: dh,
+    workType: 'Individual',
+  },
+  taituHotel: {
+    title: 'Taitu Hotel',
+    tech: 'React, Tailwind, Google Maps Embed',
+    status: 'Completed',
+    githubLink: 'https://github.com/Eyoab11/',
+    image: taitu,
     workType: 'Individual',
   },
   fitnessApp: {
