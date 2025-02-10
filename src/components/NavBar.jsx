@@ -6,8 +6,8 @@ const NavBar = () => {
     const handleDownloadCV = () => {
         // Create an anchor element
         const link = document.createElement('a');
-        link.href = '/Resume_pdf.pdf'; // Adjust this path if necessary
-        link.download = 'Resume_pdf.pdf';
+        link.href = '/Eyoab-Amare.pdf'; // Adjust this path if necessary
+        link.download = 'Eyoab-Amare.pdf';
         
         // Append the anchor to the body (not visible)
         document.body.appendChild(link);
