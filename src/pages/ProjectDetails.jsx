@@ -20,6 +20,12 @@ import discoverethiopiaimgg from '../assets/discoverEthiopia.png';
 import memariyaimgg from '../assets/memariya.com.png';
 import bootstrapimgg from '../assets/bootstrap.png';
 import personal from "../assets/personal.mp4"
+import dh from '../assets/dh.png'
+import taitu from '../assets/taitu.png'
+import machine from '../assets/machine.jpg'
+import dhvideo from '../assets/DH.mp4'
+
+
 
 const projectData = {
     mestawet: {
@@ -52,6 +58,36 @@ const projectData = {
         images: [],
         githubLink: 'https://github.com/Eyoab11/AnbessaFit',
     },
+    machineLearning: {
+        title: 'Machine Learning Projects',
+        description: 'This project involves the implementation of various supervised and unsupervised learning algorithms to analyze data and build predictive models using Python. The focus is on developing intelligent systems capable of identifying patterns, making predictions, and extracting meaningful insights from complex datasets. Through this project, I have gained experience in data preprocessing, model training, evaluation, and optimization, ensuring efficient and accurate results in different machine learning applications.',
+        tech: 'python',
+        status: 'Completed',
+        githubLink: 'https://github.com/Eyoab11/Machine-Learning',
+        image: machine,
+        workType: 'Individual',
+      },
+      DHJava: {
+        title: 'DH Java Implementation',
+        description: 'This project is a Java-based implementation of the Diffie-Hellman key exchange algorithm, designed to enable secure communication between a client and a server over an insecure network. The system generates secure key pairs using a prime modulus and generator, computes a shared secret via modular exponentiation, and encrypts/decrypts messages using Triple DES (3DES) for enhanced security. By integrating network communication and cryptographic protocols, this project showcases my ability to work with secure data transmission, encryption techniques, and backend development in Java.',
+        tech: 'java',
+        status: 'Completed',
+        githubLink: 'https://github.com/Eyoab11/dh-java',
+        image: dh,
+        workType: 'Individual',
+        video: [dhvideo]
+      },
+      taituHotel: {
+        title: 'Taitu Hotel',
+        description: 'Noticing that the original website for Taitu Hotel, Ethiopia’s first hotel, lacked a modern and user-friendly design, I took on a personal challenge to redesign and develop a better version. Built with React for component-based UI development and Tailwind CSS for a clean, responsive layout, the website integrates Google Maps Embed to provide a seamless location view. The biggest challenges were sourcing high-quality images and gathering accurate information, requiring extensive research and creativity. My approach focused on making the design intuitive and accessible, particularly for older users, ensuring smooth navigation and readability. This project highlights my frontend development expertise, ability to work with third-party integrations, and strong focus on user experience design.',
+        tech: 'React, Tailwind, Google Maps Embed',
+        status: 'Completed',
+        githubLink: 'https://github.com/Eyoab11/',
+        deployedLink: 'https://taitu-hotel.vercel.app/',
+        image: taitu,
+        workType: 'Individual',
+        
+      },
     fitnessApp: {
         title: 'Fitness Mobile App',
         description: "Our fitness mobile app, developed with Flutter, offers a user-friendly interface designed to make fitness planning easy and enjoyable. The app’s sleek and intuitive UI ensures that you can navigate through your fitness routines and nutrition plans effortlessly, whether you’re on an Android or iOS device. The workout planner is designed with simplicity in mind, allowing you to set up and manage your exercise schedules with ease. The nutrition page provides helpful suggestions and an organized layout to help you make informed dietary choices. Additionally, the nutrition planner is designed to help you map out your meals and track your intake in a straightforward manner. Our focus was on creating a clean, functional UI that enhances your fitness experience without any hassle. With its well-designed interface, the app makes it easy for you to stay on top of your fitness and nutrition goals.",
