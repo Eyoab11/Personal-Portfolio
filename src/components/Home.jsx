@@ -1,23 +1,65 @@
+// src/components/Home.jsx
 import React from 'react';
-import profileImage from '../assets/uno.jpg'; // Correct path to your image
+import { motion } from 'framer-motion';
+import { FaArrowRight } from 'react-icons/fa';
+import { TypeAnimation } from 'react-type-animation';
+// The import for useTheme should already be deleted.
 
 const Home = () => {
+  // The line `const { isDarkMode } = useTheme();` should already be deleted.
+
   return (
-    <div className="max-h-screen flex items-center justify-center">
-      <div className="mt-16 flex flex-col md:flex-row items-center justify-center">
-        <div className="bg-gray-300 w-96 h-96 rounded-lg mb-8 md:mb-0 md:mr-8 relative flex-shrink-0">
-          <img src={profileImage} alt="Profile" className="w-full h-full object-cover rounded-lg" />
+    <section
+      id="home"
+      className="relative flex items-center justify-center min-h-screen py-24 px-4 overflow-hidden bg-transparent"
+    >
+      <div className="relative z-10 flex flex-col items-center text-center">
+        <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-tight drop-shadow-lg">
+          {/* FIX: Hardcoded class, removed conditional logic */}
+          <TypeAnimation
+            sequence={["Hi, I'm Eyoab."]}
+            wrapper="span"
+            speed={40}
+            cursor={true}
+            className={'text-[#57564F]'}
+          />
+          <br />
+          {/* FIX: Hardcoded class, removed conditional logic */}
+          <TypeAnimation
+            sequence={[1800, 'A Software Engineer.']}
+            wrapper="span"
+            speed={40}
+            cursor={true}
+            className={'bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-sky-700'}
+          />
         </div>
-        <div className="ml-4 md:ml-0 text-center md:text-left">
-          <p>Hi, my name is</p>
-          <h1 className="text-6xl font-bold">Eyoab Amare</h1>
-          <p className="text-xl text-gray-700 mt-4">I'm a <span className="font-semibold text-4xl">Software Engineer</span>.</p>
-          <p className="text-gray-700 mt-4 max-w-md mb-6">My goal is to work at a company where I can deliver business value while leveling up my skills as a developer.</p>
-          <a href='#contact' className="mt-8 bg-black border border-gray-400 text-white py-2 px-4 rounded-lg hover:bg-gray-600" >Contact Me</a>
-        </div>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 4.0 }}
+        >
+            {/* FIX: Hardcoded class, removed conditional logic */}
+            <p
+              className={'mt-6 text-lg md:text-xl text-center max-w-2xl font-medium text-[#7A7A73]'}
+            >
+              I'm passionate about crafting experiences that are engaging, accessible, and user-centric. 
+              My goal is to deliver business value while leveling up my skills as a developer in a collaborative environment.
+            </p>
+            {/* FIX: Hardcoded class, removed conditional logic */}
+            <a
+              href="#contact"
+              className={`group inline-flex items-center justify-center mt-10 text-lg font-semibold py-4 px-8 rounded-full shadow-lg transition-all duration-300
+                bg-[#57564F] text-[#F8F3CE] hover:bg-black
+                transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-gray-800/50
+              `}
+            >
+              Contact Me
+              <FaArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
-}
+};
 
 export default Home;
