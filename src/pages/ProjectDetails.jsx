@@ -129,8 +129,7 @@ const projectData = {
           'Matplotlib', 
           'Seaborn'
       ],
-      githubLink: 'https://github.com/Eyoab11/financial-news-analysis',
-      deployedLink: 'https://[your-deployment].com' 
+      githubLink: 'https://github.com/Eyoab11/financial-news-analysis', 
     },
     stockMarketAnalysis: {
       title: 'Predicting Stock Price Moves with News Sentiment (B5W1 Challenge)',
