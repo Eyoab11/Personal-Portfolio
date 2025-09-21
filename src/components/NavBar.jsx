@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#certificates', label: 'Certificates' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
-    { href: 'https://eyoabs-blog.vercel.app/', label: 'Blog', special: true },
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#certificates', label: 'Certificates' },
+  { href: '#projects', label: 'Projects' },
+  { href: 'https://www.upwork.com/freelancers/~017f037b52b209159c', label: 'Hire Me', external: true },
+  { href: 'https://eyoabs-blog.vercel.app/', label: 'Blog', special: true },
 ];
 
 const NavBar = () => {
@@ -94,6 +94,8 @@ const NavLinks = ({ onLinkClick }) => {
           key={item.label}
           href={item.href}
           onClick={onLinkClick}
+          target={item.external ? '_blank' : undefined}
+          rel={item.external ? 'noopener noreferrer' : undefined}
           className={`w-full text-center md:w-auto px-4 py-2 rounded-md text-base font-semibold transition-all duration-300 ${
             item.special
               ? 'bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-sky-700 hover:opacity-80 font-bold'

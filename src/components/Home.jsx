@@ -45,15 +45,17 @@ const Home = () => {
               I'm passionate about crafting experiences that are engaging, accessible, and user-centric. 
               My goal is to deliver business value while leveling up my skills as a developer in a collaborative environment.
             </p>
-            {/* FIX: Hardcoded class, removed conditional logic */}
+            {/* FIX: Link to Upwork profile instead of contact section */}
             <a
-              href="#contact"
+              href="https://www.upwork.com/freelancers/~017f037b52b209159c"
+              target="_blank"
+              rel="noopener noreferrer"
               className={`group inline-flex items-center justify-center mt-10 text-lg font-semibold py-4 px-8 rounded-full shadow-lg transition-all duration-300
                 bg-[#57564F] text-[#F8F3CE] hover:bg-black
                 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-gray-800/50
               `}
             >
-              Contact Me
+              Hire Me on Upwork
               <FaArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
         </motion.div>

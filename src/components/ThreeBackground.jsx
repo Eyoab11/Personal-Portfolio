@@ -17,18 +17,31 @@ const ThreeBackground = ({ isActive = true }) => {
     const currentMount = mountRef.current;
 
     // --- Scene, Camera, Renderer Setup (only runs once) ---
+    if (!currentMount) return;
+
+    const width = currentMount.clientWidth || window.innerWidth;
+    const height = currentMount.clientHeight || window.innerHeight;
+
     const scene = new THREE.Scene();
     sceneRef.current = scene;
 
-    const camera = new THREE.PerspectiveCamera(75, currentMount.clientWidth / currentMount.clientHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     camera.position.z = 5;
     cameraRef.current = camera;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    rendererRef.current = renderer;
-    currentMount.appendChild(renderer.domElement);
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(width, height);
+      renderer.setPixelRatio(window.devicePixelRatio);
+      rendererRef.current = renderer;
+      currentMount.appendChild(renderer.domElement);
+    } catch (e) {
+      console.warn('WebGL not available or context creation failed. Skipping ThreeBackground.', e);
+      rendererRef.current = null;
+      // Bail out early; no renderer means we skip setting up the rest
+      return () => {};
+    }
 
     // --- Particles Setup (only runs once) ---
     const particlesGeometry = new THREE.BufferGeometry();
@@ -53,9 +66,12 @@ const ThreeBackground = ({ isActive = true }) => {
       mouse.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
     };
     const handleResize = () => {
-      camera.aspect = currentMount.clientWidth / currentMount.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
+      if (!rendererRef.current || !cameraRef.current || !mountRef.current) return;
+      const w = mountRef.current.clientWidth || window.innerWidth;
+      const h = mountRef.current.clientHeight || window.innerHeight;
+      cameraRef.current.aspect = w / h;
+      cameraRef.current.updateProjectionMatrix();
+      rendererRef.current.setSize(w, h);
     };
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleResize);
@@ -64,8 +80,8 @@ const ThreeBackground = ({ isActive = true }) => {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
-      if (currentMount && renderer.domElement.parentNode === currentMount) {
-        currentMount.removeChild(renderer.domElement);
+      if (currentMount && rendererRef.current && rendererRef.current.domElement.parentNode === currentMount) {
+        currentMount.removeChild(rendererRef.current.domElement);
       }
       // Also cancel the animation frame on cleanup
       if (animationFrameId.current) {
@@ -78,7 +94,7 @@ const ThreeBackground = ({ isActive = true }) => {
   useEffect(() => {
     const animate = () => {
       // Check the prop on every frame. If not active, do nothing.
-      if (isActive && particlesMeshRef.current) {
+      if (isActive && particlesMeshRef.current && rendererRef.current && sceneRef.current && cameraRef.current) {
         const elapsedTime = clock.current.getElapsedTime();
         
         // Parallax effect
